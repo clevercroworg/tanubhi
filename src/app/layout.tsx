@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyContactBar from "@/components/StickyContactBar";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -37,6 +38,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <StickyContactBar />
       </body>
     </html>
   );
