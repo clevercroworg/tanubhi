@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Sparkles, PhoneCall } from "lucide-react";
 
 export default function Footer() {
@@ -61,7 +62,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-card border border-brand-accent-gold/15 flex items-center justify-center text-pink-100 hover:text-brand-accent-pink hover:border-brand-accent-pink/40 hover:scale-105 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-white/5 border border-brand-accent-gold/15 flex items-center justify-center text-brand-accent-gold hover:text-white hover:bg-brand-accent-pink hover:border-brand-accent-pink hover:scale-105 transition-all duration-300"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -72,7 +73,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-brand-card border border-brand-accent-gold/15 flex items-center justify-center text-pink-100 hover:text-brand-accent-pink hover:border-brand-accent-pink/40 hover:scale-105 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-white/5 border border-brand-accent-gold/15 flex items-center justify-center text-brand-accent-gold hover:text-white hover:bg-brand-accent-pink hover:border-brand-accent-pink hover:scale-105 transition-all duration-300"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
@@ -129,9 +130,9 @@ export default function Footer() {
             &copy; {currentYear} Tanubhi Beauty Care. All rights reserved. Registered Singapore Business.
           </p>
           <div className="flex gap-4">
-            <a href="#contact" className="hover:text-brand-accent-gold transition-colors">Privacy Policy</a>
+            <Link href="/privacy" className="hover:text-brand-accent-gold transition-colors">Privacy Policy</Link>
             <span>&bull;</span>
-            <a href="#contact" className="hover:text-brand-accent-gold transition-colors">Terms of Service</a>
+            <Link href="/terms" className="hover:text-brand-accent-gold transition-colors">Terms of Service</Link>
           </div>
         </div>
 
