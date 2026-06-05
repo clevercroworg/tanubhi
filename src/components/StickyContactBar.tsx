@@ -5,7 +5,7 @@ import { PhoneCall } from "lucide-react";
 
 export default function StickyContactBar() {
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_10px_30px_rgba(45,11,36,0.12),0_4px_12px_rgba(0,0,0,0.05)] border border-brand-accent-gold/15 p-2.5 flex items-center justify-between gap-3 z-50 transition-all duration-300 hover:shadow-[0_12px_36px_rgba(45,11,36,0.16)] md:bottom-6 md:right-6 md:left-auto md:translate-x-0 md:w-80 font-sans">
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_10px_30px_rgba(45,11,36,0.12),0_4px_12px_rgba(0,0,0,0.05)] border border-brand-accent-gold/15 p-2.5 flex items-center justify-between gap-3 z-50 transition-all duration-300 hover:shadow-[0_12px_36px_rgba(45,11,36,0.16)] md:bottom-6 font-sans">
       {/* WhatsApp Button */}
       <a
         href="https://wa.me/6583853886?text=Hi%20Tanubhi%20Beauty%20Care%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
