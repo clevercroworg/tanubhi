@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles, PhoneCall, MapPin } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +19,11 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "Services", href: "#services" },
-    { name: "Price List", href: "#pricelist" },
-    { name: "Reviews", href: "#reviews" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "/services" },
+    { name: "Price List", href: "/pricelist" },
+    { name: "Reviews", href: "/reviews" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -92,7 +95,7 @@ export default function Navbar() {
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
               <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-brand-dark/5 text-brand-accent-gold group-hover:scale-110 transition-all duration-300">
                 <svg className="w-10 h-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1.5" className="text-brand-accent-gold/40" />
@@ -120,20 +123,27 @@ export default function Navbar() {
                   Beauty Care
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {menuItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="font-sans text-sm font-semibold tracking-wide text-brand-dark hover:text-brand-accent-pink transition-colors duration-300 relative py-2 group"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-pink-sunset group-hover:w-full transition-all duration-300 rounded-full" />
-                </a>
-              ))}
+              {menuItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`font-sans text-sm font-semibold tracking-wide hover:text-brand-accent-pink transition-colors duration-300 relative py-2 group ${
+                      isActive ? "text-brand-accent-pink" : "text-brand-dark"
+                    }`}
+                  >
+                    {item.name}
+                    <span className={`absolute bottom-0 left-0 h-[2px] bg-gradient-pink-sunset transition-all duration-300 rounded-full ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`} />
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Book Now Button */}
@@ -204,16 +214,21 @@ export default function Navbar() {
           </div>
 
           <nav className="flex flex-col gap-4">
-            {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="font-sans text-base font-semibold tracking-wide text-brand-dark hover:text-brand-accent-pink transition-colors py-2 border-b border-brand-dark/5"
-              >
-                {item.name}
-              </a>
-            ))}
+            {menuItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`font-sans text-base font-semibold tracking-wide hover:text-brand-accent-pink transition-colors py-2 border-b border-brand-dark/5 ${
+                    isActive ? "text-brand-accent-pink font-bold" : "text-brand-dark"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
         </div>
 
