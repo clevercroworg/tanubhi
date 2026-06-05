@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles, PhoneCall, MapPin } from "lucide-react";
 
@@ -95,33 +96,15 @@ export default function Navbar() {
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-brand-dark/5 text-brand-accent-gold group-hover:scale-110 transition-all duration-300">
-                <svg className="w-10 h-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1.5" className="text-brand-accent-gold/40" />
-                  <circle cx="32" cy="32" r="27" stroke="currentColor" strokeWidth="0.75" strokeDasharray="2 2" className="text-brand-accent-gold/30" />
-                  <path d="M32 14C32 14 36 22 36 28C36 34 32 38 32 38C32 38 28 34 28 28C28 22 32 14 32 14Z" fill="url(#logo-grad-pink-nav)" />
-                  <path d="M32 18C32 18 40 22 42 28C44 34 39 38 39 38C39 38 34 36 32 32C30 36 25 38 25 38C25 38 20 34 22 28C24 22 32 18 32 18Z" fill="url(#logo-grad-gold-nav)" className="opacity-80" />
-                  <path d="M32 26L33.5 29L36.5 30.5L33.5 32L32 35L30.5 32L27.5 30.5L30.5 29L32 26Z" fill="#ffffff" />
-                  <defs>
-                    <linearGradient id="logo-grad-pink-nav" x1="28" y1="14" x2="36" y2="38" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#d11b5d" />
-                      <stop offset="100%" stopColor="#be123c" />
-                    </linearGradient>
-                    <linearGradient id="logo-grad-gold-nav" x1="22" y1="18" x2="42" y2="38" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#fef08a" />
-                      <stop offset="100%" stopColor="#c59b27" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-lg md:text-xl font-bold tracking-wider text-brand-dark group-hover:text-brand-accent-pink transition-colors">
-                  TANUBHI
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-accent-gold font-sans font-bold">
-                  Beauty Care
-                </span>
+            <Link href="/" className="flex items-center group">
+              <div className="relative h-14 w-40 group-hover:scale-105 transition-all duration-300">
+                <Image
+                  src="/images/logo456.webp"
+                  alt="Tanubhi Beauty Care Logo"
+                  fill
+                  sizes="160px"
+                  className="object-contain object-left"
+                />
               </div>
             </Link>
 
@@ -183,34 +166,16 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-8 mt-12">
-          <div className="flex items-center gap-3 pb-6 border-b border-brand-accent-gold/15">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-brand-dark/5 text-brand-accent-gold">
-              <svg className="w-8 h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1.5" className="text-brand-accent-gold/40" />
-                <circle cx="32" cy="32" r="27" stroke="currentColor" strokeWidth="0.75" strokeDasharray="2 2" className="text-brand-accent-gold/30" />
-                <path d="M32 14C32 14 36 22 36 28C36 34 32 38 32 38C32 38 28 34 28 28C28 22 32 14 32 14Z" fill="url(#logo-grad-pink-mob)" />
-                <path d="M32 18C32 18 40 22 42 28C44 34 39 38 39 38C39 38 34 36 32 32C30 36 25 38 25 38C25 38 20 34 22 28C24 22 32 18 32 18Z" fill="url(#logo-grad-gold-mob)" className="opacity-80" />
-                <path d="M32 26L33.5 29L36.5 30.5L33.5 32L32 35L30.5 32L27.5 30.5L30.5 29L32 26Z" fill="#ffffff" />
-                <defs>
-                  <linearGradient id="logo-grad-pink-mob" x1="28" y1="14" x2="36" y2="38" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#d11b5d" />
-                    <stop offset="100%" stopColor="#be123c" />
-                  </linearGradient>
-                  <linearGradient id="logo-grad-gold-mob" x1="22" y1="18" x2="42" y2="38" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#fef08a" />
-                    <stop offset="100%" stopColor="#c59b27" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold tracking-wider text-brand-dark">
-                TANUBHI
-              </span>
-              <span className="text-[9px] uppercase tracking-[0.2em] text-brand-accent-gold font-bold">
-                Beauty Care
-              </span>
-            </div>
+          <div className="flex items-center pb-6 border-b border-brand-accent-gold/15">
+            <Link href="/" onClick={() => setIsOpen(false)} className="relative h-12 w-36">
+              <Image
+                src="/images/logo456.webp"
+                alt="Tanubhi Beauty Care Logo"
+                fill
+                sizes="150px"
+                className="object-contain object-left"
+              />
+            </Link>
           </div>
 
           <nav className="flex flex-col gap-4">

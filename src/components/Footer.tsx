@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles, PhoneCall } from "lucide-react";
 
 export default function Footer() {
@@ -22,35 +23,17 @@ export default function Footer() {
           
           {/* Logo & Description */}
           <div className="md:col-span-5 space-y-6">
-            <a href="#" className="flex items-center gap-3 group">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-brand-accent-gold group-hover:scale-108 transition-all duration-300">
-                <svg className="w-10 h-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1.5" className="text-brand-accent-gold/40" />
-                  <circle cx="32" cy="32" r="27" stroke="currentColor" strokeWidth="0.75" strokeDasharray="2 2" className="text-brand-accent-gold/30" />
-                  <path d="M32 14C32 14 36 22 36 28C36 34 32 38 32 38C32 38 28 34 28 28C28 22 32 14 32 14Z" fill="url(#logo-grad-pink-foot)" />
-                  <path d="M32 18C32 18 40 22 42 28C44 34 39 38 39 38C39 38 34 36 32 32C30 36 25 38 25 38C25 38 20 34 22 28C24 22 32 18 32 18Z" fill="url(#logo-grad-gold-foot)" className="opacity-80" />
-                  <path d="M32 26L33.5 29L36.5 30.5L33.5 32L32 35L30.5 32L27.5 30.5L30.5 29L32 26Z" fill="#ffffff" />
-                  <defs>
-                    <linearGradient id="logo-grad-pink-foot" x1="28" y1="14" x2="36" y2="38" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#d11b5d" />
-                      <stop offset="100%" stopColor="#be123c" />
-                    </linearGradient>
-                    <linearGradient id="logo-grad-gold-foot" x1="22" y1="18" x2="42" y2="38" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#fef08a" />
-                      <stop offset="100%" stopColor="#c59b27" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+            <Link href="/" className="flex items-center group">
+              <div className="relative h-16 w-44 group-hover:scale-105 transition-all duration-300">
+                <Image
+                  src="/images/logo456.webp"
+                  alt="Tanubhi Beauty Care Logo"
+                  fill
+                  sizes="200px"
+                  className="object-contain object-left brightness-110"
+                />
               </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-lg md:text-xl font-bold tracking-wider text-gradient-rose-gold">
-                  TANUBHI
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-accent-gold font-sans font-semibold">
-                  Beauty Care
-                </span>
-              </div>
-            </a>
+            </Link>
             
             <p className="text-sm text-pink-200/60 leading-relaxed max-w-sm">
               Discover the beauty within at Tanubhi Beauty Care. We offer Singapore&apos;s finest female-only wellness experiences, specialized in advanced skincare facials, waxing, and intricate bridal makeup.
