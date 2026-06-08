@@ -40,7 +40,9 @@ export default function CallToAction() {
         {/* Action Button & Trust Hint */}
         <div className="flex flex-col items-center gap-4 pt-4">
           <a
-            href="#contact"
+            href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+            target="_blank"
+            rel="noopener noreferrer"
             className="shimmer-hover inline-flex items-center justify-center px-9 py-4 rounded-full font-sans text-sm sm:text-base font-bold uppercase tracking-wider text-white bg-gradient-pink-sunset shadow-lg shadow-rose-500/20 hover:scale-103 transition-transform duration-300"
           >
             <Calendar className="w-4 h-4 mr-2" />

@@ -132,7 +132,9 @@ export default function Navbar() {
             {/* Book Now Button */}
             <div className="hidden md:flex items-center gap-4">
               <a
-                href="#contact"
+                href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="shimmer-hover inline-flex items-center justify-center px-6 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider text-white bg-gradient-pink-sunset hover:shadow-lg hover:shadow-rose-950/20 active:scale-95 transition-all duration-300"
               >
                 Book Appointment
@@ -206,7 +208,9 @@ export default function Navbar() {
             <span>Call +65 8385 3886</span>
           </a>
           <a
-            href="#contact"
+            href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="w-full text-center py-3 rounded-xl font-sans text-sm font-bold tracking-wide text-white bg-gradient-pink-sunset hover:opacity-90 active:scale-95 transition-all duration-300"
           >

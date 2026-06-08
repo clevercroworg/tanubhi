@@ -151,12 +151,14 @@ export default function ServicesPage() {
                   >
                     View Pricing
                   </Link>
-                  <Link
-                    href="/contact"
+                  <a
+                    href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider text-white bg-brand-dark hover:bg-brand-accent-pink hover:shadow-md transition-all duration-300"
                   >
                     Book Now
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

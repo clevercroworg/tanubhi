@@ -177,6 +177,20 @@ export default function ContactSection() {
 
               <h3 className="font-serif text-2xl font-bold text-pink-50 mb-6">Schedule Session</h3>
               
+              <div className="mb-6 pb-6 border-b border-brand-accent-gold/15">
+                <a
+                  href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center py-4 rounded-xl font-sans text-sm font-bold tracking-wide text-white bg-gradient-pink-sunset hover:shadow-xl hover:shadow-rose-500/25 active:scale-95 transition-all duration-300 block uppercase"
+                >
+                  Book Instantly Online
+                </a>
+                <p className="text-[10px] text-pink-200/50 mt-2 text-center uppercase tracking-wider">
+                  Or request custom appointment via WhatsApp
+                </p>
+              </div>
+              
               <form onSubmit={handleWhatsAppSubmit} className="space-y-4 font-sans">
                 <div>
                   <label className="block text-pink-200/80 font-bold uppercase tracking-widest text-[10px] mb-1.5">Full Name</label>

@@ -48,7 +48,9 @@ export default function FeaturedPromo() {
 
             <div className="pt-4">
               <a
-                href="#contact"
+                href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="shimmer-hover inline-flex items-center justify-center px-6 py-3.5 rounded-full font-sans text-sm font-bold tracking-wide text-white bg-gradient-pink-sunset shadow-md hover:shadow-lg hover:shadow-rose-500/20 transition-all duration-300"
               >
                 <CalendarRange className="w-4 h-4 mr-2" />
@@ -124,7 +126,9 @@ export default function FeaturedPromo() {
 
             <div className="pt-4">
               <a
-                href="#contact"
+                href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="shimmer-hover inline-flex items-center justify-center px-6 py-3.5 rounded-full font-sans text-sm font-bold tracking-wide text-white bg-gradient-pink-sunset shadow-md hover:shadow-lg hover:shadow-rose-500/20 transition-all duration-300"
               >
                 <CalendarRange className="w-4 h-4 mr-2" />

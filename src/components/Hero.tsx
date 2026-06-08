@@ -32,7 +32,9 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
             <a
-              href="#contact"
+              href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+              target="_blank"
+              rel="noopener noreferrer"
               className="shimmer-hover inline-flex items-center justify-center px-8 py-4 rounded-full font-sans text-sm sm:text-base font-bold tracking-wide text-white bg-gradient-pink-sunset hover:shadow-xl hover:shadow-rose-500/25 active:scale-95 transition-all duration-300 text-center"
             >
               <span>Book Appointment</span>

@@ -89,7 +89,9 @@ export default function PromoSlider() {
                   {/* Claim Button */}
                   <div className="pt-2">
                     <a
-                      href="#contact"
+                      href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="shimmer-hover inline-flex items-center gap-2 px-5 py-3 rounded-full font-sans text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-gradient-pink-sunset shadow-lg shadow-rose-950/40 hover:scale-103 transition-transform"
                     >
                       <MessageSquare className="w-4 h-4 fill-current" />
