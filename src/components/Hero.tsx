@@ -73,8 +73,8 @@ export default function Hero() {
           
           <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-brand-accent-gold/25 shadow-2xl bg-brand-card">
             <Image
-              src="/images/hero_model.png"
-              alt="Premium Beauty Model Tanubhi Care"
+              src="/images/hero_working_v2.png"
+              alt="Professional Beautician styling at Tanubhi Beauty Care"
               fill
               priority
               sizes="(max-w-720px) 100vw, 50vw"
@@ -84,7 +84,7 @@ export default function Hero() {
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel border border-brand-accent-gold/20 flex items-center justify-between">
               <div className="flex flex-col">
                 <span className="text-[10px] text-brand-accent-gold font-bold uppercase tracking-wider">Expertise</span>
-                <span className="text-sm font-bold text-brand-dark">Flawless Makeover</span>
+                <span className="text-sm font-bold text-brand-dark">Premium Salon Care</span>
               </div>
               <div className="h-8 w-[1px] bg-brand-accent-gold/25" />
               <div className="flex flex-col items-end">
