@@ -4,28 +4,28 @@ import { ArrowRight } from "lucide-react";
 export default function Welcome() {
   const pillars = [
     {
-      title: "Waxing & Smoothness",
-      subtitle: "Silky, long-lasting hair removal with minimum pain.",
-      image: "/images/parlour_interior.png",
-      tag: "Silk Skin",
-    },
-    {
-      title: "Advanced Facials",
-      subtitle: "Rejuvenate, clear, and brighten your natural skin glow.",
-      image: "/images/facial_treatment.png",
+      title: "Radiant Skin Facials",
+      subtitle: "Rejuvenate and restore your natural glow with organic herbal blends.",
+      image: "/images/welcome_facials.png",
       tag: "Skin Care",
     },
     {
-      title: "Hair Care & Styling",
-      subtitle: "Protein treatments, coloring, and bespoke salon styles.",
-      image: "/images/hair_care.png",
+      title: "Precision Threading",
+      subtitle: "Flawless eyebrow shaping and gentle hair removal by expert hands.",
+      image: "/images/welcome_threading.png",
+      tag: "Threading",
+    },
+    {
+      title: "Bespoke Styling",
+      subtitle: "Tailored cuts, premium hair coloring, and nourishing treatment rituals.",
+      image: "/images/welcome_hair.png",
       tag: "Hair Studio",
     },
     {
-      title: "Bridal Makeup & Henna",
-      subtitle: "Intricate mehndi artwork and flawless community styling.",
-      image: "/images/bridal_henna.png",
-      tag: "Bridal Art",
+      title: "Intricate Henna Art",
+      subtitle: "Celebrate special occasions with custom, detailed bridal mehndi artwork.",
+      image: "/images/welcome_henna.png",
+      tag: "Bridal & Henna",
     },
   ];
 
