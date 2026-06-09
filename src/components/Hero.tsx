@@ -73,7 +73,7 @@ export default function Hero() {
           
           <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-brand-accent-gold/25 shadow-2xl bg-brand-card">
             <Image
-              src="/images/hero_working_v2.png"
+              src="/images/hero_working_v3.png"
               alt="Professional Beautician styling at Tanubhi Beauty Care"
               fill
               priority
