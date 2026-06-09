@@ -71,7 +71,7 @@ export default function ServicesPage() {
     },
     {
       title: "Whitening Treatment",
-      image: "/images/face_model_costs.png",
+      image: "/images/whitening_treatment.png",
       tag: "Brighten & Balance",
       description:
         "Brighten and even out your complexion with our targeted skin-whitening and bleaching treatments. Safely targets hyperpigmentation, uneven underarm tones, and skin discoloration for a radiant, balanced glow.",
@@ -106,7 +106,8 @@ export default function ServicesPage() {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-brand-accent-gold/15 shadow-md hover:shadow-xl hover:border-brand-accent-pink/35 transition-all duration-500"
+              id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-brand-accent-gold/15 shadow-md hover:shadow-xl hover:border-brand-accent-pink/35 transition-all duration-500 scroll-mt-24"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden">

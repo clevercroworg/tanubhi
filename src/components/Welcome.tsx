@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Heart, Users, Star, ShoppingBag, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Welcome() {
   const pillars = [
@@ -29,28 +29,6 @@ export default function Welcome() {
     },
   ];
 
-  const trustPillars = [
-    {
-      title: "VARIETY OF CARE",
-      image: "/images/face_model_care.png",
-      icon: Heart,
-    },
-    {
-      title: "HANDY STAFF",
-      image: "/images/face_model_staff.png",
-      icon: Users,
-    },
-    {
-      title: "RELAXATION-CENTRIC",
-      image: "/images/face_model_relax.png",
-      icon: Star,
-    },
-    {
-      title: "REASONABLE COSTS",
-      image: "/images/face_model_costs.png",
-      icon: ShoppingBag,
-    },
-  ];
 
   return (
     <section id="about" className="relative py-24 md:py-32 bg-gradient-to-b from-[#1b0416] to-[#2d0b24] overflow-hidden">
@@ -133,44 +111,6 @@ export default function Welcome() {
           </a>
         </div>
 
-      </div>
-
-      {/* Visual Trust Pillars Grid - Rendered Full Width Outside the Container */}
-      <div className="w-full h-[300px] sm:h-[380px] md:h-[440px] lg:h-[520px] grid grid-cols-2 lg:grid-cols-4 gap-0 mt-20 border-t border-b border-brand-accent-gold/15 bg-brand-dark overflow-hidden relative z-10">
-        {trustPillars.map((pillar, idx) => {
-          const IconComponent = pillar.icon;
-          return (
-            <div
-              key={idx}
-              className="group relative h-full w-full overflow-hidden border-r border-brand-accent-gold/10 last:border-r-0 rounded-none transition-all duration-500 ease-out"
-            >
-              {/* Image */}
-              <Image
-                src={pillar.image}
-                alt={pillar.title}
-                fill
-                sizes="(max-w-768px) 50vw, 25vw"
-                className="object-cover group-hover:scale-108 transition-transform duration-750 ease-out opacity-95 group-hover:opacity-100"
-              />
-
-              {/* Dark-Pink Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1b0416]/95 via-[#1b0416]/30 to-transparent opacity-85 group-hover:opacity-90 transition-opacity duration-300" />
-
-              {/* Icon & Title Overlay Centered/Bottom */}
-              <div className="absolute inset-0 p-4 flex flex-col items-center justify-end text-center space-y-3.5 z-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                {/* Floating Icon Circle */}
-                <div className="w-10 h-10 rounded-full bg-gradient-pink-sunset text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-5 h-5 fill-current" />
-                </div>
-                
-                {/* Title */}
-                <h4 className="font-serif text-[10px] sm:text-xs font-extrabold tracking-wider text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover:text-brand-accent-gold transition-colors duration-300">
-                  {pillar.title}
-                </h4>
-              </div>
-            </div>
-          );
-        })}
       </div>
     </section>
   );
