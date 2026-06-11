@@ -102,7 +102,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center group">
               <div className="relative h-14 w-40 group-hover:scale-105 transition-all duration-300">
                 <Image
-                  src="/images/logo456.webp"
+                  src="/images/logo.svg"
                   alt="Tanubhi Beauty Care Logo"
                   fill
                   sizes="160px"
@@ -176,7 +176,7 @@ export default function Navbar() {
           <div className="flex items-center pb-6 border-b border-brand-accent-gold/15">
             <Link href="/" onClick={() => setIsOpen(false)} className="relative h-12 w-36">
               <Image
-                src="/images/logo456.webp"
+                src="/images/logo.svg"
                 alt="Tanubhi Beauty Care Logo"
                 fill
                 sizes="150px"

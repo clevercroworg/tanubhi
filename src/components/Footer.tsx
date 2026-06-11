@@ -26,7 +26,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center group">
               <div className="relative h-16 w-44 group-hover:scale-105 transition-all duration-300">
                 <Image
-                  src="/images/logo456.webp"
+                  src="/images/logo.svg"
                   alt="Tanubhi Beauty Care Logo"
                   fill
                   sizes="200px"
