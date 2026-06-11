@@ -7,12 +7,7 @@ import { ArrowRight, Download, HelpCircle } from "lucide-react";
 export default function PriceListPage() {
   return (
     <div className="bg-gradient-to-b from-[#fdf8fa] via-white to-[#fdf8fa] min-h-screen">
-      {/* Mini Breadcrumbs */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 text-xs text-brand-dark/40 font-semibold tracking-wider uppercase">
-        <Link href="/" className="hover:text-brand-accent-pink transition-colors">Home</Link>
-        <span className="mx-2">&bull;</span>
-        <span className="text-brand-accent-gold">Price List</span>
-      </div>
+
 
       {/* Main interactive Price list */}
       <PriceList />

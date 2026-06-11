@@ -10,6 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +30,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="w-full z-50">
+      <div className="w-full z-50 relative">
         {/* Top bar */}
         <div className="bg-brand-dark text-pink-100/90 py-1.5 sm:py-2.5 px-6 md:px-12 text-xs border-b border-brand-accent-gold/15">
           <div className="max-w-7xl mx-auto flex items-center justify-end sm:justify-between gap-2">
@@ -91,7 +92,9 @@ export default function Navbar() {
           className={`transition-all duration-500 ${
             scrolled
               ? "fixed top-0 left-0 right-0 z-50 py-3 px-4 md:px-8 max-w-7xl mx-auto mt-4 rounded-2xl glass-panel-heavy shadow-xl"
-              : "relative w-full py-5 px-6 md:px-12 bg-white/40 border-b border-brand-accent-gold/10 backdrop-blur-md"
+              : isHome
+              ? "absolute left-0 right-0 z-50 py-5 px-6 md:px-12 bg-transparent border-b border-transparent"
+              : "relative w-full py-5 px-6 md:px-12 bg-white/90 border-b border-brand-accent-gold/10 backdrop-blur-md"
           }`}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -117,7 +120,7 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={`font-sans text-sm font-semibold tracking-wide hover:text-brand-accent-pink transition-colors duration-300 relative py-2 group ${
-                      isActive ? "text-brand-accent-pink" : "text-brand-dark"
+                      isActive ? "text-brand-accent-pink" : scrolled ? "text-brand-dark" : isHome ? "text-white" : "text-brand-dark"
                     }`}
                   >
                     {item.name}
@@ -144,7 +147,9 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-full text-brand-dark hover:text-brand-accent-pink hover:bg-brand-accent-pink/10 transition-colors"
+              className={`md:hidden p-2 rounded-full hover:text-brand-accent-pink hover:bg-brand-accent-pink/10 transition-colors ${
+                scrolled ? "text-brand-dark" : isHome ? "text-white" : "text-brand-dark"
+              }`}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

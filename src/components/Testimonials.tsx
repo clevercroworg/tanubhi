@@ -32,17 +32,17 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="reviews" className="relative py-24 md:py-32 bg-gradient-to-b from-[#1b0416] to-[#2d0b24] overflow-hidden">
+    <section id="reviews" className="relative py-24 md:py-32 bg-white overflow-hidden">
       {/* Ambient backgrounds */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-brand-accent-rose/10 blur-[90px]" />
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-brand-accent-pink/10 blur-[120px]" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-brand-accent-rose/5 blur-[90px]" />
+      <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-brand-accent-pink/5 blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-20">
           <span className="text-gradient-rose-gold text-xs font-bold uppercase tracking-[0.2em]">Our Guests</span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-pink-50">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-dark">
             Happy Visitors & Reviews
           </h2>
           <div className="w-20 h-[3px] bg-gradient-pink-sunset mx-auto rounded-full" />
@@ -53,11 +53,8 @@ export default function Testimonials() {
           {reviews.map((review, idx) => (
             <div
               key={idx}
-              className="group relative bg-white/95 backdrop-blur-md rounded-3xl p-8 border border-brand-accent-gold/20 hover:border-brand-accent-pink/50 hover:bg-white shadow-xl transition-all duration-500 flex flex-col justify-between"
+              className="group relative bg-[#fff9fc]/85 backdrop-blur-md rounded-3xl p-8 border border-brand-accent-gold/15 hover:border-brand-accent-pink/40 hover:bg-white shadow-[0_10px_35px_rgba(45,11,36,0.05)] hover:shadow-[0_12px_45px_rgba(209,27,93,0.08)] transition-all duration-500 flex flex-col justify-between"
             >
-              {/* Gold border hover animation */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-pink-sunset rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
               <div>
                 {/* Quote Icon */}
                 <div className="text-brand-accent-pink/15 mb-6 flex justify-between items-start">

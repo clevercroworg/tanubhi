@@ -1,10 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function StickyContactBar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky contact bar after scrolling 100px
+      setScrolled(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_12px_40px_rgba(45,11,36,0.16),0_2px_12px_rgba(0,0,0,0.06)] border border-brand-accent-gold/20 p-3 flex items-center justify-between gap-4 z-50 transition-all duration-300 hover:shadow-[0_16px_48px_rgba(45,11,36,0.22)] md:bottom-6 md:p-3.5 font-sans">
+    <div className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_12px_40px_rgba(45,11,36,0.16),0_2px_12px_rgba(0,0,0,0.06)] border border-brand-accent-gold/20 p-3 flex items-center justify-between gap-4 z-50 transition-all duration-500 hover:shadow-[0_16px_48px_rgba(45,11,36,0.22)] md:bottom-6 md:p-3.5 font-sans ${
+      scrolled
+        ? "translate-y-0 opacity-100 scale-100"
+        : "translate-y-24 opacity-0 scale-95 pointer-events-none"
+    }`}>
       
       {/* Brand Badge (Visible on tablet & desktop, hidden on mobile for optimal button width) */}
       <div className="hidden sm:flex flex-col items-start gap-0.5 border-r border-brand-accent-gold/20 pr-4.5 flex-shrink-0 select-none">
@@ -39,7 +54,7 @@ export default function StickyContactBar() {
         >
           {/* Authentic Call SVG Icon */}
           <svg 
-            className="w-4 h-4 fill-none stroke-current stroke-3 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" 
+            className="w-4.5 h-4.5 fill-none stroke-current stroke-3 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" 
             viewBox="0 0 24 24"
             strokeLinecap="round" 
             strokeLinejoin="round"
