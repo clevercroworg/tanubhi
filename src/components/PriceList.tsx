@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Sparkles, Clock } from "lucide-react";
 
 interface ServiceItem {
@@ -151,13 +152,13 @@ export default function PriceList() {
           <p className="font-sans text-xs text-[#664e60]/60">
             * Prices listed above are general starting guidelines. Final quotes may vary slightly depending on individual skin/hair length and requirements.
           </p>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 mt-6 text-sm font-bold text-brand-accent-gold hover:text-brand-accent-pink transition-colors duration-300 group"
           >
             <span>Request custom package quote</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Welcome() {
@@ -96,19 +97,19 @@ export default function Welcome() {
 
         {/* Buttons and CTAs on Welcome Page */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-4 mb-20">
-          <a
-            href="#pricelist"
+          <Link
+            href="/pricelist"
             className="shimmer-hover inline-flex items-center justify-center px-7 py-3.5 rounded-full font-sans text-sm font-bold tracking-wide text-white bg-gradient-pink-sunset hover:shadow-lg hover:shadow-rose-500/25 active:scale-95 transition-all duration-300 text-center"
           >
             <span>Browse Service Price List</span>
             <ArrowRight className="w-4 h-4 ml-2" />
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="inline-flex items-center justify-center px-7 py-3.5 rounded-full font-sans text-sm font-semibold tracking-wide text-pink-100 hover:text-white border border-pink-200/20 hover:border-brand-accent-pink/50 bg-[#2d0b24]/40 hover:bg-[#2d0b24]/80 shadow-sm transition-all duration-300 text-center"
           >
             Request Custom Package Info
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -28,41 +28,23 @@ export default function StickyContactBar() {
       </div>
 
       {/* Buttons Action Area */}
-      <div className="flex-grow flex items-center gap-3 w-full sm:w-auto">
-        {/* WhatsApp Button */}
+      <div className="flex-grow flex items-center w-full sm:w-auto">
+        {/* WhatsApp Instant Booking & Support Button */}
         <a
           href="https://wa.me/6583853886?text=Hi%20Tanubhi%20Beauty%20Care%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 sm:px-6 rounded-xl font-bold text-white bg-[#25D366] hover:bg-[#20ba59] shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.97] text-xs sm:text-sm group"
+          className="w-full flex items-center justify-center gap-2.5 py-3 px-5 sm:px-8 rounded-xl font-bold text-white bg-[#25D366] hover:bg-[#20ba59] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.97] text-xs sm:text-sm group uppercase tracking-wider"
         >
           {/* Authentic WhatsApp SVG Icon */}
           <svg 
-            className="w-4.5 h-4.5 fill-current transition-transform duration-300 group-hover:scale-110" 
+            className="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110 shrink-0" 
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path d="M12.004 0C5.378 0 .004 5.374.004 12c0 2.112.551 4.17 1.595 5.986L.004 24l6.19-1.623c1.762.96 3.738 1.467 5.81 1.467 6.626 0 12-5.374 12-12s-5.374-12-12-12zm6.368 17.068c-.27.765-1.353 1.4-1.854 1.493-.456.084-.91.134-2.88-.65-2.52-1.002-4.148-3.568-4.274-3.734-.127-.168-.94-1.25-.94-2.385 0-1.134.59-1.69.802-1.914.212-.224.464-.28.62-.28.156 0 .312.002.448.006.146.004.34-.056.53.4.2.48.68 1.666.74 1.785.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.312-.36.42-.12.12-.246.252-.106.492.14.24.62 1.022 1.33 1.654.914.814 1.684 1.066 1.924 1.186.24.12.38.1.52-.06.14-.16.6-1.002.76-1.344.16-.34.32-.28.54-.2.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.2 1.344z"/>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          <span className="tracking-wide">WhatsApp</span>
-        </a>
-
-        {/* Call Button */}
-        <a
-          href="tel:+6583853886"
-          className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 sm:px-6 rounded-xl font-bold text-white bg-gradient-pink-sunset hover:opacity-95 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.97] text-xs sm:text-sm group"
-        >
-          {/* Authentic Call SVG Icon */}
-          <svg 
-            className="w-4.5 h-4.5 fill-none stroke-current stroke-3 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" 
-            viewBox="0 0 24 24"
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          <span className="tracking-wide">Call Salon</span>
+          <span>Chat & Book on WhatsApp</span>
         </a>
       </div>
     </div>

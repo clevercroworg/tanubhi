@@ -1,8 +1,7 @@
 "use client";
 
 import PriceList from "@/components/PriceList";
-import Link from "next/link";
-import { ArrowRight, Download, HelpCircle } from "lucide-react";
+import { Download, HelpCircle } from "lucide-react";
 
 export default function PriceListPage() {
   return (
