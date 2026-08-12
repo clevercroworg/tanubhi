@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export default function BeautyTips() {
@@ -96,13 +97,13 @@ export default function BeautyTips() {
 
                 {/* Read More link */}
                 <div className="pt-6 mt-6 border-t border-brand-accent-gold/15">
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/blog"
                     className="inline-flex items-center gap-2 text-xs font-bold text-brand-accent-gold hover:text-brand-accent-pink transition-colors duration-300 group/link"
                   >
                     <span>Read full article</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1.5 transition-transform duration-300" />
-                  </a>
+                  </Link>
                 </div>
               </div>
 

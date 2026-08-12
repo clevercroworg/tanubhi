@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sparkles, PhoneCall, MapPin } from "lucide-react";
+import { Menu, X, PhoneCall, MapPin } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function Navbar() {
             {/* Social Icons Corner */}
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/tanubhibeautycare"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-brand-accent-gold hover:scale-108 transition-all"
@@ -60,7 +60,7 @@ export default function Navbar() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/tanubhibeautycare"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-brand-accent-gold hover:scale-108 transition-all"

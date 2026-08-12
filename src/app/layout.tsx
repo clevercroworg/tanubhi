@@ -17,6 +17,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tanubhi.com"),
+  alternates: {
+    canonical: "https://tanubhi.com",
+  },
   title: "Tanubhi Beauty Care | Premium Beauty & Hair Salon Singapore",
   description: "Discover the beauty within at Tanubhi Beauty Care, Bedok Reservoir Road, Singapore. Experience luxury waxing, advanced facial treatments, professional makeup, and intricate bridal henna.",
   keywords: "Tanubhi Beauty Care, beauty salon Singapore, Bedok beauty salon, waxing services Singapore, bridal henna Singapore, facial treatments Singapore, Indian makeup, Malay bridal, hair protein treatment",
