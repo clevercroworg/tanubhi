@@ -17,7 +17,7 @@ export default function BeautyTips() {
       snippet: "For optimal skin cell rejuvenation and deep pore extraction, professional facials are highly recommended once every 4 weeks to maintain a healthy glow.",
       date: "May 18, 2026",
       author: "Skin Therapists",
-      image: "/images/facial_treatment.png",
+      image: "/images/blog_facial_schedule.png",
       tag: "Facial Frequency",
     },
     {
@@ -25,7 +25,7 @@ export default function BeautyTips() {
       snippet: "Shield your hair cuticles from heat and humidity by applying deep conditioning protein treatments or natural henna masks once a week to seal in moisture.",
       date: "May 10, 2026",
       author: "Hair Stylists",
-      image: "/images/hair_care.png",
+      image: "/images/blog_hair_remedies.png",
       tag: "Hair Care",
     },
   ];

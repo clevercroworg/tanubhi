@@ -64,7 +64,7 @@ export default function FeaturedPromo() {
             <div className="absolute inset-0 bg-gradient-pink-sunset rounded-[2.5rem] rotate-2 scale-102 opacity-15 blur-xs" />
             <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-brand-accent-gold/25 shadow-xl">
               <Image
-                src="/images/facial_treatment.png"
+                src="/images/promo_facial.png"
                 alt="Advanced Skincare Facial Treatment"
                 fill
                 sizes="(max-w-768px) 100vw, 50vw"
@@ -82,7 +82,7 @@ export default function FeaturedPromo() {
             <div className="absolute inset-0 bg-gradient-gold rounded-[2.5rem] -rotate-2 scale-102 opacity-15 blur-xs" />
             <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-brand-accent-gold/25 shadow-xl">
               <Image
-                src="/images/bridal_henna.png"
+                src="/images/promo_henna.png"
                 alt="Intricate Henna Mehndi Artwork"
                 fill
                 sizes="(max-w-768px) 100vw, 50vw"

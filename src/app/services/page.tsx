@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Our Beauty & Salon Services",
+  description:
+    "Explore our complete range of female-only services in Bedok, Singapore: Brazilian waxing, custom facial treatments, bridal makeup, henna art, precision threading, and hair repair.",
+  alternates: {
+    canonical: "https://tanubhi.com/services",
+  },
+};
 
 export default function ServicesPage() {
   const services = [
@@ -107,7 +117,7 @@ export default function ServicesPage() {
             <div
               key={idx}
               id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-brand-accent-gold/15 shadow-md hover:shadow-xl hover:border-brand-accent-pink/35 transition-all duration-500 scroll-mt-24"
+              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-brand-accent-gold/15 shadow-md hover:shadow-xl hover:border-brand-accent-pink/35 transition-all duration-500 scroll-mt-32"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden">

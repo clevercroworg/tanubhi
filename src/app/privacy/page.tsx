@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Client Data & Safety",
+  description:
+    "Learn about Tanubhi Beauty Care's privacy practices, Singapore PDPA compliance, and ladies-only confidentiality standards.",
+  alternates: {
+    canonical: "https://tanubhi.com/privacy",
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (

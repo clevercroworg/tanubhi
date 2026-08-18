@@ -1,13 +1,20 @@
-"use client";
-
+import type { Metadata } from "next";
 import PriceList from "@/components/PriceList";
-import { Download, HelpCircle } from "lucide-react";
+import DownloadCatalogButton from "@/components/DownloadCatalogButton";
+import { HelpCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Service Price List & Catalog | Singapore GST-Free",
+  description:
+    "Explore our complete transparent price menu for waxing, facials, hair studio treatments, and bridal henna at Tanubhi Beauty Care Bedok Singapore.",
+  alternates: {
+    canonical: "https://tanubhi.com/pricelist",
+  },
+};
 
 export default function PriceListPage() {
   return (
     <div className="bg-gradient-to-b from-[#fdf8fa] via-white to-[#fdf8fa] min-h-screen">
-
-
       {/* Main interactive Price list */}
       <PriceList />
 
@@ -16,23 +23,13 @@ export default function PriceListPage() {
         <div className="glass-panel-heavy rounded-3xl p-8 border border-brand-accent-gold/25 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 bg-white/80">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">
-              Want a offline copy?
+              Want an offline copy?
             </h3>
             <p className="font-sans text-xs sm:text-sm text-[#664e60] leading-relaxed">
-              Download our latest price list catalog brochure in PDF format to view offline on your device anytime.
+              Download or print our latest price list catalog brochure to view offline on your device anytime.
             </p>
           </div>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              alert("Downloading Price Brochure PDF...");
-            }}
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider text-white bg-gradient-pink-sunset hover:shadow-lg transition-all duration-300 shrink-0"
-          >
-            <Download className="w-4 h-4" />
-            <span>Download Catalog PDF</span>
-          </a>
+          <DownloadCatalogButton />
         </div>
 
         {/* FAQs */}

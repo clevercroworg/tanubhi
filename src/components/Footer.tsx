@@ -101,7 +101,7 @@ export default function Footer() {
             <h4 className="font-serif text-base font-bold text-pink-100 uppercase tracking-wider">Hotline Support</h4>
             <div className="space-y-3.5 text-sm text-pink-200/60">
               <a
-                href="tel:83853886"
+                href="tel:+6583853886"
                 className="flex items-center gap-2 text-pink-200/80 hover:text-brand-accent-gold transition-colors duration-300"
               >
                 <PhoneCall className="w-4 h-4 text-brand-accent-pink" />

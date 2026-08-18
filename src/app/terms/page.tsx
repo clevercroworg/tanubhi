@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Salon Booking & Policies",
+  description:
+    "Review Tanubhi Beauty Care's terms of service, ladies-only policy, GST-free pricing, and appointment cancellation terms.",
+  alternates: {
+    canonical: "https://tanubhi.com/terms",
+  },
+};
 
 export default function TermsOfServicePage() {
   return (

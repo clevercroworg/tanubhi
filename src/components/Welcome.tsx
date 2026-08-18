@@ -32,7 +32,7 @@ export default function Welcome() {
 
 
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-gradient-to-b from-[#1b0416] to-[#2d0b24] overflow-hidden">
+    <section id="about" className="relative py-24 md:py-32 bg-gradient-to-b from-[#1b0416] to-[#2d0b24] overflow-hidden scroll-mt-28">
       {/* Decorative Glow Elements */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 rounded-full bg-brand-accent-pink/10 blur-[90px]" />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-brand-accent-gold/10 blur-[120px]" />

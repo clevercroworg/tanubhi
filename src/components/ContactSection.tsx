@@ -10,20 +10,33 @@ export default function ContactSection() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
+  const todayStr = new Date().toISOString().split("T")[0];
+
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone || !date || !time) {
-      alert("Please fill in all details to book your appointment.");
+      alert("Please fill in all required fields to book your appointment.");
+      return;
+    }
+
+    if (date < todayStr) {
+      alert("Please select a valid date from today onwards.");
+      return;
+    }
+
+    const cleanedPhone = phone.replace(/[^0-9+]/g, "");
+    if (cleanedPhone.length < 8) {
+      alert("Please enter a valid contact phone number (at least 8 digits).");
       return;
     }
     
     const countryCode = "65"; // Singapore
-    const whatsappNum = "83853886"; // Primary contact from screenshot
+    const whatsappNum = "83853886";
     const text = encodeURIComponent(
-      `Hi Tanubhi Beauty Care, I would like to book a premium appointment:\n\n` +
+      `Hi Tanubhi Beauty Care, I would like to book a salon appointment:\n\n` +
       `*Name:* ${name}\n` +
-      `*Phone:* ${phone}\n` +
-      `*Service:* ${service}\n` +
+      `*Contact Phone:* ${phone}\n` +
+      `*Selected Service:* ${service}\n` +
       `*Preferred Date:* ${date}\n` +
       `*Preferred Time:* ${time}\n\n` +
       `Please confirm availability. Thank you!`
@@ -103,17 +116,17 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <span className="text-[9px] text-pink-300/40 block font-bold uppercase tracking-wider">
-                        WhatsApp Hotline
+                        WhatsApp Hotline (Primary)
                       </span>
                       <span className="font-bold text-pink-50 text-sm group-hover:text-brand-accent-gold transition-colors">
-                        8385 3886
+                        +65 8385 3886
                       </span>
                     </div>
                   </a>
 
                   {/* Shop Line sub-card */}
                   <a
-                    href="tel:69625490"
+                    href="tel:+6569625490"
                     className="group flex items-center gap-4 p-4 rounded-2xl bg-[#1b0416]/30 border border-brand-accent-gold/10 hover:border-brand-accent-pink/30 hover:bg-[#1b0416]/50 transition-all duration-300 text-pink-200/80 hover:text-white"
                   >
                     <div className="w-10 h-10 rounded-full bg-brand-accent-pink/15 text-brand-accent-pink flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -121,7 +134,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <span className="text-[9px] text-pink-300/40 block font-bold uppercase tracking-wider">
-                        Shop Line
+                        Salon Landline (Reception)
                       </span>
                       <span className="font-bold text-pink-50 text-sm group-hover:text-brand-accent-gold transition-colors">
                         6962 5490
@@ -223,31 +236,56 @@ export default function ContactSection() {
                     onChange={(e) => setService(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-white/10 border border-brand-accent-gold/20 text-white focus:outline-none focus:border-brand-accent-pink focus:bg-white/15 transition-colors text-sm [&>option]:bg-brand-dark [&>option]:text-white shadow-sm"
                   >
-                    <option value="Brazilian Waxing">Brazilian Waxing ($45)</option>
-                    <option value="Full Legs Waxing">Full Legs Waxing ($38)</option>
-                    <option value="Gold Glow Facial">Gold Glow Facial ($90)</option>
-                    <option value="Advanced Anti-Aging Facial">Advanced Anti-Aging Facial ($75)</option>
-                    <option value="Brazilian Keratin Treatment">Brazilian Keratin ($120)</option>
-                    <option value="Hair Protein Repair">Hair Protein Repair ($60)</option>
-                    <option value="Bridal Makeup Package">Bridal Makeup Package ($250+)</option>
-                    <option value="Intricate Bridal Henna">Bridal Henna ($120+)</option>
-                    <option value="Festive Henna Combo">Henna & Blowout Combo ($90)</option>
+                    <optgroup label="Waxing Services">
+                      <option value="Brazilian Waxing ($45)">Brazilian Waxing ($45)</option>
+                      <option value="Full Legs Waxing ($38)">Full Legs Waxing ($38)</option>
+                      <option value="Full Arms Waxing ($28)">Full Arms Waxing ($28)</option>
+                      <option value="Half Legs Waxing ($22)">Half Legs Waxing ($22)</option>
+                      <option value="Half Arms Waxing ($18)">Half Arms Waxing ($18)</option>
+                      <option value="Underarms Gentle Waxing ($15)">Underarms Gentle Waxing ($15)</option>
+                    </optgroup>
+                    <optgroup label="Facial Treatments">
+                      <option value="Gold Glow Brightening Therapy ($90)">Gold Glow Brightening Therapy ($90)</option>
+                      <option value="Advanced Anti-Aging Facial ($75)">Advanced Anti-Aging Facial ($75)</option>
+                      <option value="Premium Pearl Whitening Facial ($65)">Premium Pearl Whitening Facial ($65)</option>
+                      <option value="Fruit Glow Herbal Facial ($50)">Fruit Glow Herbal Facial ($50)</option>
+                      <option value="Organic Aloe Soothing Treatment ($40)">Organic Aloe Soothing Treatment ($40)</option>
+                    </optgroup>
+                    <optgroup label="Hair Studio & Spa">
+                      <option value="Brazilian Keratin Treatment ($120)">Brazilian Keratin Treatment ($120)</option>
+                      <option value="Hair Protein Repair Therapy ($60)">Hair Protein Repair Therapy ($60)</option>
+                      <option value="Premium Hair Highlights ($80+)">Premium Hair Highlights ($80+)</option>
+                      <option value="Organic Herbal Henna Treatment ($35)">Organic Herbal Henna Treatment ($35)</option>
+                      <option value="Nourishing Head-Oil Massage ($25)">Nourishing Head-Oil Massage ($25)</option>
+                    </optgroup>
+                    <optgroup label="Bridal & Henna">
+                      <option value="Luxury Bridal Hair & Makeup Package ($250+)">Luxury Bridal Hair & Makeup Package ($250+)</option>
+                      <option value="Custom Intricate Bridal Henna ($120+)">Custom Intricate Bridal Henna ($120+)</option>
+                      <option value="Henna Artwork & Styling Combo ($90)">Henna Artwork & Styling Combo ($90)</option>
+                      <option value="Elegant Party Makeup & Hair ($70)">Elegant Party Makeup & Hair ($70)</option>
+                      <option value="Simple Festive Henna ($15)">Simple Festive Henna ($15)</option>
+                    </optgroup>
                   </select>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-pink-200/80 font-bold uppercase tracking-widest text-[10px] mb-1.5">Preferred Date</label>
+                    <label className="block text-pink-200/80 font-bold uppercase tracking-widest text-[10px] mb-1.5">
+                      Preferred Date
+                    </label>
                     <input
                       type="date"
                       required
+                      min={todayStr}
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-white/10 border border-brand-accent-gold/20 text-white focus:outline-none focus:border-brand-accent-pink focus:bg-white/15 transition-colors text-sm shadow-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-pink-200/80 font-bold uppercase tracking-widest text-[10px] mb-1.5">Preferred Time</label>
+                    <label className="block text-pink-200/80 font-bold uppercase tracking-widest text-[10px] mb-1.5">
+                      Time (10:30 AM – 8 PM)
+                    </label>
                     <input
                       type="time"
                       required

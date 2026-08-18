@@ -37,10 +37,10 @@ export default function Navbar() {
             <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 text-center sm:text-left">
               <span className="flex items-center gap-1.5 hover:text-brand-accent-gold transition-colors">
                 <MapPin className="w-3.5 h-3.5 text-brand-accent-pink" />
-                <span>631 Bedok Reservoir Road, Singapore</span>
+                <span>#01-906, 631 Bedok Reservoir Road, Singapore 470631</span>
               </span>
               <span className="hidden md:inline text-pink-100/25">|</span>
-              <a href="tel:83853886" className="flex items-center gap-1.5 hover:text-brand-accent-gold transition-colors">
+              <a href="tel:+6583853886" className="flex items-center gap-1.5 hover:text-brand-accent-gold transition-colors">
                 <PhoneCall className="w-3.5 h-3.5 text-brand-accent-pink" />
                 <span>WhatsApp: +65 8385 3886</span>
               </a>
@@ -206,7 +206,7 @@ export default function Navbar() {
 
         <div className="flex flex-col gap-4">
           <a
-            href="tel:83853886"
+            href="tel:+6583853886"
             className="flex items-center justify-center gap-2 py-3 rounded-xl border border-brand-accent-gold/20 text-brand-accent-gold font-semibold hover:bg-brand-card-hover transition-colors text-sm"
           >
             <PhoneCall className="w-4 h-4 text-brand-accent-pink" />
