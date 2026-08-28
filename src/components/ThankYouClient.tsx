@@ -37,17 +37,17 @@ export default function ThankYouClient() {
 
       <div className="max-w-3xl mx-auto relative z-10 space-y-12">
         {/* Top Success Badge & Heading */}
-        <div className="text-center space-y-4">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-pink-sunset shadow-2xl shadow-rose-950/60 mx-auto animate-bounce-subtle">
+        <div className="flex flex-col items-center justify-center text-center space-y-5">
+          <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-pink-sunset shadow-2xl shadow-rose-950/60 animate-bounce-subtle">
             <CheckCircle2 className="w-10 h-10 text-white" />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-brand-accent-gold/30 text-brand-accent-gold text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-brand-accent-gold/30 text-brand-accent-gold text-xs font-bold uppercase tracking-widest shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-brand-accent-pink" />
             <span>Appointment Request Received</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white pt-2">
             Thank You{name ? `, ${name}` : ""}!
           </h1>
           <p className="font-sans text-base sm:text-lg text-pink-200/90 max-w-xl mx-auto leading-relaxed">
