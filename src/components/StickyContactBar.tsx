@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { trackAppointmentConversion } from "@/lib/gtag";
 
 export default function StickyContactBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,6 +35,12 @@ export default function StickyContactBar() {
           href="https://wa.me/6583853886?text=Hi%20Tanubhi%20Beauty%20Care%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            trackAppointmentConversion({
+              service: "Sticky WhatsApp Bar",
+              method: "whatsapp_sticky",
+            })
+          }
           className="w-full flex items-center justify-center gap-2.5 py-3 px-5 sm:px-8 rounded-xl font-bold text-white bg-[#25D366] hover:bg-[#20ba59] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.97] text-xs sm:text-sm group uppercase tracking-wider"
         >
           {/* Authentic WhatsApp SVG Icon */}

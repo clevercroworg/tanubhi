@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Sparkles } from "lucide-react";
+import { trackAppointmentConversion } from "@/lib/gtag";
 
 export default function ContactSection() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("Brazilian Waxing");
@@ -29,6 +32,12 @@ export default function ContactSection() {
       alert("Please enter a valid contact phone number (at least 8 digits).");
       return;
     }
+
+    // Track conversion event for Google Ads & Analytics
+    trackAppointmentConversion({
+      service,
+      method: "whatsapp_form",
+    });
     
     const countryCode = "65"; // Singapore
     const whatsappNum = "83853886";
@@ -43,6 +52,9 @@ export default function ContactSection() {
     );
     
     window.open(`https://wa.me/${countryCode}${whatsappNum}?text=${text}`, "_blank");
+
+    // Navigate to Thank You page
+    router.push(`/thank-you?service=${encodeURIComponent(service)}&name=${encodeURIComponent(name)}`);
   };
 
   const businessHours = [
@@ -195,6 +207,12 @@ export default function ContactSection() {
                   href="https://booking.appointy.com/en-US/tanubhi/bookings/service"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackAppointmentConversion({
+                      service: "Appointy Instant Portal",
+                      method: "appointy",
+                    })
+                  }
                   className="w-full text-center py-4 rounded-xl font-sans text-sm font-bold tracking-wide text-white bg-gradient-pink-sunset hover:shadow-xl hover:shadow-rose-500/25 active:scale-95 transition-all duration-300 block uppercase"
                 >
                   Book Instantly Online
