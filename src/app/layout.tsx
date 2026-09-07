@@ -129,6 +129,24 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-1000064987');
+
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-1000064987/1XVgCJLkp_AcENuP79wD',
+                    'value': 5.0,
+                    'currency': 'SGD',
+                    'event_callback': callback
+                });
+              }
+              return false;
+            }
+            window.gtag_report_conversion = gtag_report_conversion;
           `}
         </Script>
       </head>

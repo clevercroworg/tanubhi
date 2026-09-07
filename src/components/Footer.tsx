@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { PhoneCall } from "lucide-react";
+import { reportCallConversion } from "@/lib/gtag";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -102,6 +105,7 @@ export default function Footer() {
             <div className="space-y-3.5 text-sm text-pink-200/60">
               <a
                 href="tel:+6583853886"
+                onClick={() => reportCallConversion("tel:+6583853886")}
                 className="flex items-center gap-2 text-pink-200/80 hover:text-brand-accent-gold transition-colors duration-300"
               >
                 <PhoneCall className="w-4 h-4 text-brand-accent-pink" />

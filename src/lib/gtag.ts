@@ -2,10 +2,36 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
+    gtag_report_conversion?: (url?: string) => boolean;
   }
 }
 
 export const GA_TRACKING_ID = "AW-1000064987";
+export const CALL_CONVERSION_SEND_TO = "AW-1000064987/1XVgCJLkp_AcENuP79wD";
+
+// Click to call conversion reporter as specified in Google Ads
+export const reportCallConversion = (url?: string): boolean => {
+  if (typeof window !== "undefined") {
+    if (typeof window.gtag_report_conversion === "function") {
+      return window.gtag_report_conversion(url);
+    }
+    if (typeof window.gtag === "function") {
+      const callback = () => {
+        if (typeof url !== "undefined") {
+          window.location.href = url;
+        }
+      };
+      window.gtag("event", "conversion", {
+        send_to: CALL_CONVERSION_SEND_TO,
+        value: 5.0,
+        currency: "SGD",
+        event_callback: callback,
+      });
+      return false;
+    }
+  }
+  return false;
+};
 
 // Helper to track custom events
 export const trackEvent = (

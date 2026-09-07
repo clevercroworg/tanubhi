@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Sparkles } from "lucide-react";
-import { trackAppointmentConversion } from "@/lib/gtag";
+import { trackAppointmentConversion, reportCallConversion } from "@/lib/gtag";
 
 export default function ContactSection() {
   const router = useRouter();
@@ -139,6 +139,7 @@ export default function ContactSection() {
                   {/* Shop Line sub-card */}
                   <a
                     href="tel:+6569625490"
+                    onClick={() => reportCallConversion("tel:+6569625490")}
                     className="group flex items-center gap-4 p-4 rounded-2xl bg-[#1b0416]/30 border border-brand-accent-gold/10 hover:border-brand-accent-pink/30 hover:bg-[#1b0416]/50 transition-all duration-300 text-pink-200/80 hover:text-white"
                   >
                     <div className="w-10 h-10 rounded-full bg-brand-accent-pink/15 text-brand-accent-pink flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">

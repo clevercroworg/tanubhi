@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, PhoneCall, MapPin } from "lucide-react";
-import { trackAppointmentConversion } from "@/lib/gtag";
+import { trackAppointmentConversion, reportCallConversion } from "@/lib/gtag";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +41,11 @@ export default function Navbar() {
                 <span>#01-906, 631 Bedok Reservoir Road, Singapore 470631</span>
               </span>
               <span className="hidden md:inline text-pink-100/25">|</span>
-              <a href="tel:+6583853886" className="flex items-center gap-1.5 hover:text-brand-accent-gold transition-colors">
+              <a
+                href="tel:+6583853886"
+                onClick={() => reportCallConversion("tel:+6583853886")}
+                className="flex items-center gap-1.5 hover:text-brand-accent-gold transition-colors"
+              >
                 <PhoneCall className="w-3.5 h-3.5 text-brand-accent-pink" />
                 <span>WhatsApp: +65 8385 3886</span>
               </a>
@@ -214,6 +218,7 @@ export default function Navbar() {
         <div className="flex flex-col gap-4">
           <a
             href="tel:+6583853886"
+            onClick={() => reportCallConversion("tel:+6583853886")}
             className="flex items-center justify-center gap-2 py-3 rounded-xl border border-brand-accent-gold/20 text-brand-accent-gold font-semibold hover:bg-brand-card-hover transition-colors text-sm"
           >
             <PhoneCall className="w-4 h-4 text-brand-accent-pink" />

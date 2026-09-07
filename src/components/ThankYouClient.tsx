@@ -14,7 +14,7 @@ import {
   ShieldCheck,
   HeartHandshake,
 } from "lucide-react";
-import { trackAppointmentConversion } from "@/lib/gtag";
+import { trackAppointmentConversion, reportCallConversion } from "@/lib/gtag";
 
 export default function ThankYouClient() {
   const searchParams = useSearchParams();
@@ -156,6 +156,7 @@ export default function ThankYouClient() {
 
           <a
             href="tel:+6569625490"
+            onClick={() => reportCallConversion("tel:+6569625490")}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-sans text-sm font-semibold tracking-wider text-pink-100 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all"
           >
             <Phone className="w-4 h-4 text-brand-accent-gold" />
