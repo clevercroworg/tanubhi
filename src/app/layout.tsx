@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
@@ -119,36 +118,38 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* Google tag (gtag.js) */}
-        <Script
+        <script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=AW-1000064987"
-          strategy="afterInteractive"
         />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-1000064987');
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-1000064987');
 
-            function gtag_report_conversion(url) {
-              var callback = function () {
-                if (typeof(url) != 'undefined') {
-                  window.location = url;
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                      'send_to': 'AW-1000064987/1XVgCJLkp_AcENuP79wD',
+                      'value': 5.0,
+                      'currency': 'SGD',
+                      'event_callback': callback
+                  });
                 }
-              };
-              if (typeof gtag === 'function') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-1000064987/1XVgCJLkp_AcENuP79wD',
-                    'value': 5.0,
-                    'currency': 'SGD',
-                    'event_callback': callback
-                });
+                return false;
               }
-              return false;
-            }
-            window.gtag_report_conversion = gtag_report_conversion;
-          `}
-        </Script>
+              window.gtag_report_conversion = gtag_report_conversion;
+            `,
+          }}
+        />
       </head>
       <body className="min-h-full bg-brand-dark text-pink-50 flex flex-col selection:bg-brand-accent-pink selection:text-white">
         <Navbar />
