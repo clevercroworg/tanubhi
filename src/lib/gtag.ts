@@ -7,6 +7,7 @@ declare global {
 }
 
 export const GA_TRACKING_ID = "AW-1000064987";
+export const GA_MEASUREMENT_ID = "G-T9VSY98XKR";
 export const CALL_CONVERSION_SEND_TO = "AW-1000064987/1XVgCJLkp_AcENuP79wD";
 
 // Click to call conversion reporter as specified in Google Ads

@@ -117,10 +117,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Google Ads & Google Analytics 4 */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-1000064987"
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-T9VSY98XKR"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -129,6 +133,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-1000064987');
+              gtag('config', 'G-T9VSY98XKR');
 
               function gtag_report_conversion(url) {
                 var callback = function () {
